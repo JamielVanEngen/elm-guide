@@ -16,13 +16,16 @@ main =
 
 
 type alias Model =
-    { content : String
+    { 
+        content : String
     }
 
 
 init : Model
 init =
-    {content =  ""}
+    {
+        content =  ""
+    }
 
 
 type Msg
@@ -40,6 +43,6 @@ view : Model -> Html Msg
 view model =
     div []
         [ input [placeholder "Text to reverse", value model.content, onInput Change] [],
-        div [] [text (String.reverse model.content)]
+        div [] [text (String.reverse model.content)],
+        div [] [text (String.fromInt (String.length model.content))]
         ]
-
